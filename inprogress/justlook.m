@@ -9,7 +9,7 @@ load('G:\2020Dec_JACKYPILOT\Datasets\1608217202014\INSITU\1608217202014_vectRAW'
 
 
 %% Sensor 1
-k=2;
+k=3;
 f1=figure
 a1=subplot(5,1,1)
 hold on
@@ -45,6 +45,18 @@ linkaxes([ a2 a3 a4],'y')
 ylim([-2 2])
 
 
+
+figure
+hold on
+grid on
+yyaxis left
+plot((vect(k).t-RBR(k).t(1))*24*3600, vect(k).xraw)
+ylabel('Cross Shore Velocity')
+yyaxis right
+plot((RBR(k).t-RBR(k).t(1))*24*3600, RBR(k).d+RBR(k).z)
+xlabel('Collection Time [s]')
+ylabel('Water Surface Elevation [m]')
+title('Station 3')
 % %% Load Stereo
 % [ALat, ALon, spN, spE, ry, rx] = frfCoord(RBR(k).e, RBR(k).n);
 % 

@@ -23,7 +23,7 @@ oset='202012171500_grid10cm_1Hz_partial';
 awin=30;
 
 % Overlap (seconds)
-ovr=15;
+ovr=10;
 
 % CamNum
 cnum=2;

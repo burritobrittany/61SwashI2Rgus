@@ -4,8 +4,8 @@ clear all
 
 %% User Input
 % Foldername
-fname='1608217202014';
-odir='G:\2020Dec_JACKYPILOT\';
+fname='1608033600000';
+odir='R:\2020Dec_JACKYPILOT\';
 
 
 % Vectrino Locations
@@ -39,12 +39,12 @@ A=textscan(F,'%s%s%s%s%s%s%s%s%s%s%s%s%s','headerlines',4,'delimiter',',');
 t=A{1};
 t=erase(t,'"');
 t=string(t);
-cind=1:9000:length(t); % 9000 is 30m*60s*5hz
+cind=1:(9000):length(t); % 9000 is 30m*60s*5hz
 tchk=datenum(t(cind))+4/24; % Sarah added this to code
 
 [m i]=min(abs(to-tchk))
 ind0=cind(i);
-ind=(ind0-1000):(ind0+10000);
+ind=(ind0-1000):(ind0+10000*10);
 
 % Load Vectrino Data
 count=0;
